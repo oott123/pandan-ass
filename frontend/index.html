@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/amazeui/2.7.2/css/amazeui.flat.min.css" />
+    <base target="_blank">
+    <title>弹幕文件下载</title>
+    <style>
+      .am-list > li:first-of-type {
+        border-top: none;
+      }
+      .am-list-static > li {
+        padding: 0;
+        font-family: monospace;
+      }
+      [v-cloak] {
+        display: none;
+      }
+      .loading {
+        display: none;
+      }
+      [v-cloak] + .loading {
+        display: block;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" style="padding-top: 1rem;" v-cloak>
+      <div class="am-g am-g-fixed">
+        <div class="am-u-sm-12 am-u-lg-4">
+          <div class="am-panel am-panel-primary">
+            <div class="am-panel-hd">搜索</div>
+            <div class="am-panel-bd">
+              <div class="am-form">
+                <input type="text" v-model="search" value="ass" placeholder="“xml”，“2017-07-30”">
+              </div>
+            </div>
+          </div>
+          <div class="am-panel am-panel-default ">
+            <div class="am-panel-hd">提示</div>
+            <div class="am-panel-bd">
+              <div class="am-form">
+                <div class="am-show-lg-only">xml 格式弹幕，请在电脑上使用 <a href="http://pan.baidu.com/s/1kV6PMF9">BiliLocal</a> 播放。手机上应该用不了……</div>
+                <div class="am-show-lg-only">ass 格式弹幕，电脑请使用 <a href="https://potplayer.daum.net/?lang=zh_CN">PotPlayer</a>，安卓使用 MXPlayer，iOS 我也不清楚，请找支持 ass 字幕的播放器播放即可。</div>
+                <div class="am-show-md-down">手机请下载 ass 格式弹幕，用支持 ass 字幕的播放器即可加载，比如安卓的 MXPlayer 播放器。</div>
+                <p></p>
+                <div>视频下载方式：<a href="https://tieba.baidu.com/p/4620233506">贴吧帖子</a> 将神秘代码（类似这种：1c，2B，0rkc）复制下来，去掉逗号，在前面加上 <code>pan.baidu.com/s/</code> 即可打开。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="am-u-sm-12 am-u-lg-8">
+          <div class="am-panel am-panel-default">
+            <div class="am-panel-hd">下载列表</div>
+            <ul class="am-list am-list-static">
+              <li v-for="f in filteredFiles">
+                <a :href="f.url" download>【{{f.ext}}】{{f.name}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="loading">
+      正在加载……<br>
+      如果加载不出来，请尝试刷新，或者换一个浏览器。
+    </div>
+    <div class="footer">
+      <center>弹幕数据来自用户发言，遵循合理使用原则使用</center>
+      <center>Created by <a href="http://www.oott123.com">oott123</a>, licensed under AGPLv3. Report abuse: abuse at public.oott123.com</center>
+    </div>
+    <script src="https://cdn.staticfile.org/vue/2.2.6/vue.min.js"></script>
+    <script src="../output/meta.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "path": {
+    "python": "/usr/bin/python3",
+    "danmaku2ass": "./3rd/danmaku2ass-master/danmaku2ass.py",
+    "output": "./output"
+  },
+  "args": {
+    "danmaku2ass": [
+      "-s", "1152x648", "-fn", "Microsoft YaHei",
+      "-fs", "30", "-a", "0.8", "-dm", "7"
+    ]
+  },
+  "timeOffset": -6,
+  "room": 10003
+}
