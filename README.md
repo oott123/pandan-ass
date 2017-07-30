@@ -23,7 +23,7 @@ vim config.json
 
 ## Config
 
-```json
+```js
 {
   "path": {
     "python": "/usr/bin/python3", // path of python3
