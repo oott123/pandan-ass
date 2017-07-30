@@ -9,7 +9,9 @@ var app = new Vue({
       var that = this
       return this.files.filter(function (value) {
         return value.indexOf(that.search) > -1
-      }).map(function (value) {
+      })
+      .sort().reverse()
+      .map(function (value) {
         return {
           name: value,
           ext: value.slice(-3).toUpperCase(),
